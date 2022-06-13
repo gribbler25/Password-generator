@@ -1,25 +1,15 @@
 
 //special chars array
-var charArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", "<", ">", "=", "?", "@", "~"];   //index 0
+var charArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", "<", ">", "=", "?", "@", "~"];
 
-var numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];   // index 1
+var numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-var upperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];  //index 2
+var upperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-var lowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];  // index 3
+var lowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 var newArray = [""];
 var finalArray = [""];
-
-//shuffle array fxn??
-// function shuffle(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
-// same can be written as:
-// let t = array[i]; array[i] = array[j]; array[j] = t
-// [array[i], array[j]] = [array[j], array[i]];
-//   }
-// }
 
 //function to get a random index number in an array.
 function randomIndex(array) {
@@ -41,7 +31,6 @@ var randomFinalArray = function (array, passLength) {
   }
   console.log(newArray);
 }
-
 
 
 // Get references to the #generate element, the BUTTON.
@@ -128,13 +117,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// var charArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-"];//, "<", ">", "=", "?", "@", "~", //index 0
-
-// var numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // index 1
-
-// var upperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-// //, "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", //index 2
-
-// var lowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
-// //, "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"// index 3
