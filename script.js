@@ -8,8 +8,8 @@ var upperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 
 var lowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-var newArray = [""];
-var finalArray = [""];
+var newArray = [];
+var finalArray = [];
 
 //function to get a random index number in an array.
 function randomIndex(array) {
@@ -98,8 +98,9 @@ function writePassword() {
     randomFinalArray(newArray, passLength);
     console.log(finalArray);
     finalArray = Array.from(finalArray);
+    finalArray = finalArray.join("");
 
-    // shuffle(newArray);
+
     console.log(finalArray);
 
     return finalArray;
