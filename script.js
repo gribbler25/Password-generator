@@ -17,27 +17,28 @@ function randomIndex(array) {
   return randElement;
 }
 //function that takes in an array and a chosen length(int) as arguments,
-// and adds a new random array of that length to the variable array 'newArray'
+// and pushes a new random array of that length to the variable array 'newArray'
 var randomArray = function (array, passLength) {
   for (i = 0; i < passLength; i++) {
-    newArray += array[randomIndex(array)];
+    newArray.push(array[randomIndex(array)]);
   }
   console.log(newArray);
 }
 //function for final array of chosen length taken out of a larger array constructed with user input.
 var randomFinalArray = function (array, passLength) {
   for (i = 0; i < passLength; i++) {
-    finalArray += array[randomIndex(array)];
+    finalArray.push(array[randomIndex(array)]);
   }
-  console.log(newArray);
+  return finalArray;
 }
-
 
 // Get references to the #generate element, the BUTTON.
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password(text area) input
 function writePassword() {
+  //   var newArray = [];--How to get the generator to clear the value before another is created? this is not the solution.
+  // var finalArray = [];
   function generatePassword() {
 
     var passLength = window.prompt("How long do you want your password to be? Type a number here between 8 and 128");
@@ -94,14 +95,12 @@ function writePassword() {
         window.alert("your password will not include upper case");
       }
     }
+
     console.log(newArray);
-    randomFinalArray(newArray, passLength);
+    finalArray = randomFinalArray(newArray, passLength);
+
     console.log(finalArray);
-    finalArray = Array.from(finalArray);
     finalArray = finalArray.join("");
-
-
-    console.log(finalArray);
 
     return finalArray;
 
