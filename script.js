@@ -13,7 +13,7 @@ var finalArray = [];
 
 //function to get a random index number in an array.
 function randomIndex(array) {
-  randElement = Math.floor(Math.random() * array.length);
+  var randElement = Math.floor(Math.random() * array.length);
   return randElement;
 }
 //function that takes in an array and a chosen length(int) as arguments,
