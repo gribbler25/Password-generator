@@ -2,6 +2,8 @@
 
 <img width="1440" alt="Screen Shot 2022-06-12 at 10 30 43 PM" src="https://user-images.githubusercontent.com/98048059/173274750-0e8023c3-4aae-4f29-85f9-11f2bc6a9dac.png">
 
+https://gribbler25.github.io/Password-generator/
+
 ## Languages used:
 
     * Javascript/ HTML/ CSS
