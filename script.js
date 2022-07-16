@@ -109,6 +109,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password(text area) input
 function writePassword() {
   finalArray = [];
+  newArray = [];
 
   function generatePassword() {
     var passLength = window.prompt(
@@ -127,57 +128,66 @@ function writePassword() {
         "Do you want to use special characters(ie, *,&,%,$) ?"
       );
 
-      if (isSpChars) {
-        randomArray(charArray, passLength);
-      } else {
-        window.confirm(
+      if (!isSpChars) {
+        var confSpChar = window.confirm(
           "Are you sure you don't want to include special characters?"
         );
-        if (window.confirm) {
-          window.alert("your password will not include special characters");
+        if (!confSpChar) {
+          window.alert("special characters will be used");
+          randomArray(charArray, passLength);
         }
+      } else {
+        randomArray(charArray, passLength);
       }
-    }
 
-    var isNums = window.confirm("Do you want to use numbers?");
-    if (isNums) {
-      randomArray(numArray, passLength);
-    } else {
-      window.confirm("Are you sure you don't want to include numbers?");
-      if (window.confirm) {
-        window.alert("Your password will not include numbers");
+      var isNums = window.confirm("Do you want to use numbers?");
+      if (!isNums) {
+        var confNums = window.confirm(
+          "Are you sure you don't want to include numbers?"
+        );
+        if (!confNums) {
+          window.alert("Numbers will be used");
+          randomArray(numArray, passLength);
+        }
+      } else {
+        randomArray(numArray, passLength);
       }
-    }
 
-    var isLowers = window.confirm("Do you want to use lower case letters?");
-    if (isLowers) {
-      randomArray(lowerArray, passLength);
-    } else {
-      window.confirm("Are you sure you don't want to include lower case?");
-      if (window.confirm) {
-        window.alert("your password will not include lower case");
+      var isLowers = window.confirm("Do you want to use lower case letters?");
+      if (!isLowers) {
+        var confNums = window.confirm(
+          "Are you sure you don't want to include lower case letters?"
+        );
+        if (!confNums) {
+          window.alert("lower case letters will be used");
+          randomArray(lowerArray, passLength);
+        }
+      } else {
+        randomArray(lowerArray, passLength);
       }
-    }
 
-    var isUppers = window.confirm("Do you want to use upper case letters?");
-    if (isUppers) {
-      randomArray(upperArray, passLength);
-    } else {
-      window.confirm("Are you sure you don't want to include upper case?");
-      if (window.confirm) {
-        window.alert("your password will not include upper case");
+      var isUppers = window.confirm("Do you want to use upper case letters?");
+      if (!isUppers) {
+        var confUpper = window.confirm(
+          "Are you sure you don't want to include upper case letters?"
+        );
+        if (!confUpper) {
+          window.alert("Upper case letters will be used");
+          randomArray(upperArray, passLength);
+        }
+      } else {
+        randomArray(upperArray, passLength);
       }
+
+      console.log(newArray);
+      finalArray = randomFinalArray(newArray, passLength);
+
+      finalArray = finalArray.join("");
+
+      console.log(finalArray);
+      return finalArray;
     }
-
-    console.log(newArray);
-    finalArray = randomFinalArray(newArray, passLength);
-
-    finalArray = finalArray.join("");
-
-    console.log(finalArray);
-    return finalArray;
   }
-
   var password = generatePassword();
   // then take the choices made above and put into the text area in the HTML
 
